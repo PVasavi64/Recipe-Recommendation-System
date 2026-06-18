@@ -1,0 +1,228 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mom's Kitchen</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #ffe5b4, #ffcccc);
+    }
+
+    header {
+      background-color: #ff704d;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 2em;
+      border-bottom: 4px solid #e65c00;
+    }
+
+    .search-box {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .search-box input {
+      padding: 10px;
+      width: 250px;
+      font-size: 16px;
+    }
+
+    .search-box button {
+      padding: 10px 15px;
+      background-color: #ff704d;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .search-box button:hover {
+      background-color: #e65c00;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: #ff704d;
+    }
+
+    ul, ol {
+      margin-left: 20px;
+    }
+
+    .image {
+      width: 50%;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #555;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  Mom's Kitchen
+</header>
+
+<div class="search-box">
+  <input type="text" id="searchBox" placeholder="Search recipe...">
+  <button onclick="searchRecipe()">Search</button>
+</div>
+
+<div class="container">
+
+  <div id="recipeContent">
+
+    <h2>Recipe: Creamy Pasta</h2>
+
+    <img src="pas.jpg" alt="Creamy Pasta" class="image">
+
+    <h3>Ingredients</h3>
+    <ul>
+      <li>200g pasta</li>
+      <li>1 cup cream</li>
+      <li>2 cloves garlic (chopped)</li>
+      <li>1/4 cup grated cheese</li>
+      <li>Salt & pepper to taste</li>
+    </ul>
+
+    <h3>Instructions</h3>
+    <ol>
+      <li>Boil the pasta until cooked.</li>
+      <li>In a pan, sauté garlic in butter.</li>
+      <li>Add cream and bring to a simmer.</li>
+      <li>Add cheese, salt, and pepper.</li>
+      <li>Mix pasta into the sauce and serve hot.</li>
+    </ol>
+
+    <h3>Click here for more recipes</h3>
+    <a href="https://www.food.com/" target="_blank">Recipe Website</a>
+
+  </div>
+
+</div>
+
+<footer>
+  &copy; 2025 Mom's Kitchen
+</footer>
+
+<script>
+
+function searchRecipe() {
+
+  let recipe =
+    document.getElementById("searchBox").value.toLowerCase().trim();
+
+  let content =
+    document.getElementById("recipeContent");
+
+  if (recipe === "pasta" || recipe === "creamy pasta") {
+
+    content.innerHTML = `
+      <h2>Recipe: Creamy Pasta</h2>
+
+      <img src="pas.jpg" alt="Creamy Pasta" class="image">
+
+      <h3>Ingredients</h3>
+      <ul>
+        <li>200g pasta</li>
+        <li>1 cup cream</li>
+        <li>2 cloves garlic (chopped)</li>
+        <li>1/4 cup grated cheese</li>
+        <li>Salt & pepper to taste</li>
+      </ul>
+
+      <h3>Instructions</h3>
+      <ol>
+        <li>Boil the pasta until cooked.</li>
+        <li>In a pan, sauté garlic in butter.</li>
+        <li>Add cream and bring to a simmer.</li>
+        <li>Add cheese, salt, and pepper.</li>
+        <li>Mix pasta into the sauce and serve hot.</li>
+      </ol>
+    `;
+  }
+
+  else if (recipe === "pizza") {
+
+    content.innerHTML = `
+      <h2>Recipe: Pizza</h2>
+
+      <h3>Ingredients</h3>
+      <ul>
+        <li>Pizza Base</li>
+        <li>Cheese</li>
+        <li>Tomato Sauce</li>
+        <li>Vegetables</li>
+      </ul>
+
+      <h3>Instructions</h3>
+      <ol>
+        <li>Spread sauce on pizza base.</li>
+        <li>Add vegetables and cheese.</li>
+        <li>Bake for 15 minutes.</li>
+        <li>Serve hot.</li>
+      </ol>
+    `;
+  }
+
+  else if (recipe === "biryani") {
+
+    content.innerHTML = `
+      <h2>Recipe: Biryani</h2>
+
+      <h3>Ingredients</h3>
+      <ul>
+        <li>Rice</li>
+        <li>Chicken</li>
+        <li>Spices</li>
+        <li>Onions</li>
+      </ul>
+
+      <h3>Instructions</h3>
+      <ol>
+        <li>Cook chicken with spices.</li>
+        <li>Prepare rice separately.</li>
+        <li>Layer rice and chicken.</li>
+        <li>Cook on low flame.</li>
+        <li>Serve hot.</li>
+      </ol>
+    `;
+  }
+
+  else {
+
+    content.innerHTML = `
+      <h2>Recipe Not Found</h2>
+      <p>Try searching for:</p>
+      <ul>
+        <li>Pasta</li>
+        <li>Pizza</li>
+        <li>Biryani</li>
+      </ul>
+    `;
+  }
+}
+
+</script>
+
+</body>
+</html>
+```
